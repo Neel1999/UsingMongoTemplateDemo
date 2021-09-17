@@ -5,6 +5,7 @@ import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+// Student Collection in MongoDB
 @Document(value = "Students")
 public class Student {
 

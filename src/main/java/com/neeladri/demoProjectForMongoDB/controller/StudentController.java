@@ -24,6 +24,7 @@ public class StudentController {
     @Autowired
     StudentService studentService;
 
+    // Crud Operations Using MongoDB Template
     @PostMapping("/")
     public Student save(@RequestBody Student student){
         return studentService.save(student);
@@ -45,12 +46,11 @@ public class StudentController {
         response.put("The Number Of Deleted Documents", studentService.deleteStudent(id));
         return response;
     }
+    // _________________________________________________________________________________________
 
+    // Getting Students that are above a certain salary range(Implemented in the Repository Layer)
     @GetMapping("/getStudent/")
     public List<Student> getStudentBySalary(@RequestParam(value ="studentsalary") long salary){
         return studentService.getStudentBySalary(salary);
     }
-
-
-
 }
